@@ -11,6 +11,9 @@ public interface IConst {
     String KEY_FRAGMENT_CASTLES = "key_fragment_castles";
     String KEY_FRAGMENT_MAPS = "key_fragment_maps";
     String KEY_FRAGMENT_CASTLE_DETAIL = "key_fragment_castle_detail";
+    String KEY_FRAGMENT_PICTURE = "key_fragment_picture";
+    String KEY_BYTES_PICTURE = "key_drawable";
+
     String FIREBASE_STORAGE = "gs://castlesdatabase.appspot.com";
 
 }

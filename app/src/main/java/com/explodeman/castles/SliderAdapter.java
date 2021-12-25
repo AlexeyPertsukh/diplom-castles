@@ -2,6 +2,8 @@ package com.explodeman.castles;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.explodeman.castles.models.FirebaseImage;
+import com.explodeman.castles.utils.UtilPicture;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -23,6 +26,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder> {
+
+    private OnClickItem onClickItem;
 
     private final List<FirebaseImage> list;
     private final Context context;
@@ -66,16 +71,28 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        private boolean enableListener;
+
         private final ImageView ivSliderCastle;
         private final TextView tvSliderPosition;
         private final ProgressBar pbLoad;
-
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivSliderCastle = itemView.findViewById(R.id.ivSliderCastle);
             tvSliderPosition = itemView.findViewById(R.id.tvSliderPosition);
             pbLoad = itemView.findViewById(R.id.pbSloderLoad);
+            itemView.setOnClickListener(this::onClick);
+            enableListener = false;
+        }
+
+        private void onClick(View view) {
+            if(onClickItem != null && enableListener) {
+                ivSliderCastle.buildDrawingCache();
+                Drawable drawable = ivSliderCastle.getDrawable();
+                Bitmap bitmap = UtilPicture.drawable2Bitmap(drawable);
+                onClickItem.actionOnClickItem(bitmap);
+            }
         }
     }
 
@@ -96,6 +113,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder
                         .placeholder(R.drawable.castle_plug_light)
                         .error(R.drawable.castle_plug_light)
                         .into(holder.ivSliderCastle);
+                holder.enableListener = true;
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -117,6 +135,14 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder
 
     private void hideProgressBar(@NonNull ViewHolder holder) {
         holder.pbLoad.setVisibility(View.GONE);
+    }
+
+    public void setOnClickItem(OnClickItem onClickItem) {
+        this.onClickItem = onClickItem;
+    }
+
+    public interface OnClickItem {
+        void actionOnClickItem(Bitmap bitmap);
     }
 
 }

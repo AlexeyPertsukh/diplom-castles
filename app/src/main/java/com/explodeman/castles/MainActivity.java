@@ -5,8 +5,8 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -24,6 +24,7 @@ import com.explodeman.castles.roomdb.CastleDb;
 import com.explodeman.castles.utils.IBasicDialog;
 import com.explodeman.castles.utils.IToast;
 import com.explodeman.castles.utils.PermissionUtils;
+import com.explodeman.castles.utils.UtilPicture;
 import com.explodeman.castles.utils.UtilKeyboard;
 import com.explodeman.castles.utils.UtilOther;
 import com.google.android.material.navigation.NavigationView;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
     private CastleDetailFragment castleDetailFragment;
     private CastlesFragment castlesFragment;
     private MapsFragment mapsFragment;
+    private PictureFragment pictureFragment;
 
     private CastleDao castleDao;
 
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
         castlesFragment = new CastlesFragment();
         castleDetailFragment = new CastleDetailFragment();
         mapsFragment = new MapsFragment();
+        pictureFragment = new PictureFragment();
     }
 
     private boolean navigationItemSelect(MenuItem menuItem) {
@@ -205,6 +208,32 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
                     .commit();
         }
 
+    }
+
+    @Override
+    public void showPictureFragment(Bitmap bitmap) {
+
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentByTag(KEY_FRAGMENT_PICTURE);
+
+        Bundle args = new Bundle();
+
+        byte[] bytes = UtilPicture.bitmapToBytes(bitmap);
+
+        args.putByteArray(KEY_BYTES_PICTURE, bytes);
+        pictureFragment.setArguments(args);
+
+        if (fragment == null) {
+            fm.beginTransaction()
+                    .add(R.id.fragment_container, pictureFragment, KEY_FRAGMENT_PICTURE)
+                    .addToBackStack(KEY_FRAGMENT_PICTURE)
+                    .commit();
+        } else {
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, pictureFragment, KEY_FRAGMENT_PICTURE)
+                    .addToBackStack(KEY_FRAGMENT_PICTURE)
+                    .commit();
+        }
     }
 
     public boolean checkTopMapsFragment() {
