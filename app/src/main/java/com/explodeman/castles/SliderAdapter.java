@@ -17,8 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.explodeman.castles.models.FirebaseImage;
 import com.explodeman.castles.utils.UtilPicture;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -113,13 +115,17 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder
                         .placeholder(R.drawable.castle_plug_light)
                         .error(R.drawable.castle_plug_light)
                         .into(holder.ivSliderCastle);
-                holder.enableListener = true;
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 hideProgressBar(holder);
                 setPlug(holder);
+            }
+        }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+            @Override
+            public void onComplete(@NonNull Task<Uri> task) {
+                holder.enableListener = true;
             }
         });
     }

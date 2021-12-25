@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
         if (checkTopMapsFragment()) {
             return;
         }
-
+        removePictureFragmentFromStackIfMissing();
         UtilKeyboard.hideKeyboard(this);
 
         if (fragment == null) {
@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
         if (checkTopCastlesFragment()) {
             return;
         }
+        removePictureFragmentFromStackIfMissing();
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentByTag(KEY_FRAGMENT_CASTLES);
 
@@ -200,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
         } else {
 
             castleDetailFragment.setInfo(castle);
-//            fm.popBackStackImmediate(KEY_FRAGMENT_CASTLE_DETAIL, 0);
             fm.beginTransaction()
                     .replace(R.id.fragment_container, castleDetailFragment, KEY_FRAGMENT_CASTLE_DETAIL)
 //                    .addToBackStack(KEY_FRAGMENT_CASTLE_DETAIL)
@@ -226,13 +226,16 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
         if (fragment == null) {
             fm.beginTransaction()
                     .add(R.id.fragment_container, pictureFragment, KEY_FRAGMENT_PICTURE)
+//                    .disallowAddToBackStack()
                     .addToBackStack(KEY_FRAGMENT_PICTURE)
                     .commit();
         } else {
-            fm.beginTransaction()
-                    .replace(R.id.fragment_container, pictureFragment, KEY_FRAGMENT_PICTURE)
-                    .addToBackStack(KEY_FRAGMENT_PICTURE)
-                    .commit();
+//            fm.beginTransaction()
+//                    .replace(R.id.fragment_container, pictureFragment, KEY_FRAGMENT_PICTURE)
+////                    .addToBackStack(KEY_FRAGMENT_PICTURE)
+//            .disallowAddToBackStack()
+////                    .addToBackStack(null)
+//                    .commit();
         }
     }
 
@@ -346,5 +349,15 @@ public class MainActivity extends AppCompatActivity implements IMain, IToast, IC
         }
     }
 
+    private void removePictureFragmentFromStackIfMissing() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentByTag(KEY_FRAGMENT_PICTURE);
+        if(fragment != null) {
+            fm.beginTransaction()
+                    .remove(pictureFragment)
+                    .commit();
+            fm.popBackStack();
+        }
+    }
 
 }
