@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Castles of Ukraine</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="text_nav_draw">Замки Украины</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_caption_maps">Карта</string>
+    <string name="menu_caption_list">Список</string>
+    <string name="text_nav_draw_email">cpu486-blog@rambler.ru</string>
+    <string name="menu_maps_mapstype_text">Вид карты</string>
+    <string name="menu_castles_search_text">Найти</string>
+    <string name="menu_castle_detail_position_text">Показать на карте</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_maps_random"
+        android:icon="@drawable/ic_baseline_castle_24"
+        android:orderInCategory="1"
+        android:title="Случайный замок"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/menu_maps_type"
+        android:icon="@drawable/ic_baseline_layers_24"
+        android:orderInCategory="2"
+        android:title="@string/menu_maps_mapstype_text"
+        app:showAsAction="always"
+        />
+
+</menu>

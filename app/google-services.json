@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "522373767805",
+    "firebase_url": "https://castlesdatabase-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "castlesdatabase",
+    "storage_bucket": "castlesdatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522373767805:android:ab7190584f5b1b36ef8714",
+        "android_client_info": {
+          "package_name": "com.explodeman.castle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqv38X80-ImZ8ygOGoLgV3odZ2ZAflhh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522373767805:android:f907bbec21010344ef8714",
+        "android_client_info": {
+          "package_name": "com.explodeman.castles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqv38X80-ImZ8ygOGoLgV3odZ2ZAflhh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522373767805:android:f17afe739bef83d5ef8714",
+        "android_client_info": {
+          "package_name": "com.explodeman.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqv38X80-ImZ8ygOGoLgV3odZ2ZAflhh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522373767805:android:15f32910eac0fd82ef8714",
+        "android_client_info": {
+          "package_name": "com.explodeman.testfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqv38X80-ImZ8ygOGoLgV3odZ2ZAflhh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522373767805-97grtas5nu4sluc64mi1dc0c14k87pv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

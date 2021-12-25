@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/StyleMyTextView</item>
+        <item name="android:buttonStyle">@style/StyleMyButton</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="StyleMainFontRegular">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+
+    <style name="StyleNawDrawHeaderFont">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="StyleNawDrawHeaderCaption" parent="@style/StyleNawDrawHeaderFont">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="StyleNawDrawHeaderMail" parent="StyleNawDrawHeaderCaption">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="StyleMainText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorTextMain</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="StyleListNameText" parent="@style/StyleMainFontRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray4</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="StyleListDescriptionText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/gray1</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="StyleDetailDescriptionText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/gray4</item>
+    </style>
+
+    <style name="StyleMyTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+
+    <style name="StyleMyButton" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+
+</resources>
